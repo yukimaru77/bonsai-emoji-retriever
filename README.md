@@ -34,6 +34,35 @@ python scripts/train.py --config configs/default.yaml
 python scripts/show_embeddings.py --config configs/default.yaml
 ```
 
+## Docker
+
+GPU 付きのコンテナで学習を回す:
+
+```bash
+# ビルド
+docker build -t bonsai-emoji-retriever:latest .
+
+# ボリューム作成 (HF cache と outputs を永続化)
+docker volume create bonsai-hf-cache
+docker volume create bonsai-outputs
+
+# 学習 (ワンショット)
+docker run --rm --gpus all \
+  -v bonsai-hf-cache:/app/.cache/huggingface \
+  -v bonsai-outputs:/app/outputs \
+  bonsai-emoji-retriever:latest \
+  python scripts/train.py --config configs/default.yaml
+
+# コンテナに入って対話的に
+docker run --rm -it --gpus all \
+  -v bonsai-hf-cache:/app/.cache/huggingface \
+  -v bonsai-outputs:/app/outputs \
+  bonsai-emoji-retriever:latest bash
+```
+
+**要件**: NVIDIA Container Toolkit, CUDA 12+ 対応 GPU。
+aarch64 (GB10 等) / x86_64 どちらも動作。
+
 ## 設定
 
 `configs/default.yaml` で全 hyperparameter を制御:

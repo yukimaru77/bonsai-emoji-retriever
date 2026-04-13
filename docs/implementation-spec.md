@@ -306,11 +306,11 @@ bonsai-emoji-retriever/
 - [x] 全統合で 1 epoch 完走、loss が NaN/Inf でない (step1=1.0027, step2=0.2347)
 - [x] GitHub リポジトリに push 済み (yukimaru77/bonsai-emoji-retriever)
 
-### Phase 2 — Container
+### Phase 2 — Container ✅ 完了
 
-- [ ] `docker build` が成功する
-- [ ] `docker run --gpus all -it ...` でコンテナに入れる
-- [ ] コンテナ内で Phase 1 と同じ学習が完走する
+- [x] `docker build` が成功する (nvidia/cuda:13.0.0-runtime-ubuntu24.04 ベース)
+- [x] `docker run --gpus all -it ...` でコンテナに入れる (GPU 認識 OK: NVIDIA GB10)
+- [x] コンテナ内で Phase 1 と同じ学習が完走する (loss 1.0027 → 0.2347, host と完全一致)
 
 ---
 
