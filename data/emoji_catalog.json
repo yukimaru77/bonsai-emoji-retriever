@@ -1,0 +1,26 @@
+[
+  {
+    "emoji_id": "eyes",
+    "surface_ja": "両目",
+    "surface_en": "eyes",
+    "aliases": ["見てる", "watching"],
+    "glosses": ["見ました", "確認中", "監視中", "注目"],
+    "label_text": "両目 / eyes / 見ました / 確認中 / 監視中 / 注目"
+  },
+  {
+    "emoji_id": "pray",
+    "surface_ja": "合掌",
+    "surface_en": "pray",
+    "aliases": ["お願い", "thanks"],
+    "glosses": ["ありがとう", "感謝", "お願いします", "助かります"],
+    "label_text": "合掌 / pray / ありがとう / 感謝 / お願いします / 助かります"
+  },
+  {
+    "emoji_id": "white_check_mark",
+    "surface_ja": "チェックマーク",
+    "surface_en": "white check mark",
+    "aliases": ["完了", "done"],
+    "glosses": ["対応完了", "done", "終わりました", "OK"],
+    "label_text": "チェックマーク / white check mark / 対応完了 / done / 終わりました / OK"
+  }
+]

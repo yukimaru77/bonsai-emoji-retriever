@@ -1,0 +1,3 @@
+{"query": "確認しました！", "positive_label": "eyes", "negative_labels": ["white_check_mark"]}
+{"query": "ありがとうございます！助かりました", "positive_label": "pray", "negative_labels": ["white_check_mark"]}
+{"query": "対応完了です", "positive_label": "white_check_mark", "negative_labels": ["eyes"]}

@@ -1,0 +1,42 @@
+model:
+  model_id: "prism-ml/Bonsai-8B-unpacked"
+  max_length: 512
+  torch_dtype: "float16"
+
+lora:
+  r: 16
+  lora_alpha: 64
+  lora_dropout: 0.1
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj"]
+
+quantization:
+  enabled: false
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_compute_dtype: "float16"
+  bnb_4bit_use_double_quant: true
+
+training:
+  num_epochs: 1
+  batch_size: 2
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  gradient_accumulation_steps: 1
+  max_grad_norm: 1.0
+  seed: 42
+
+loss:
+  init_temperature: 0.05
+  temperature_lr: 1.0e-3
+  fn_margin: 0.1
+
+mrl:
+  enabled: true
+  dims: [256, 1024, 4096]
+
+data:
+  train_path: "data/train.jsonl"
+  emoji_catalog_path: "data/emoji_catalog.json"
+
+output:
+  save_dir: "outputs/"
